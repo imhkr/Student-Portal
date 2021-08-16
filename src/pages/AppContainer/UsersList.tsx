@@ -25,7 +25,9 @@ const UsersList: FC<Props> = (props) => {
   }, []);
   return (
     <div>
-      {loading && <FaSpinner className="w-5 h-5 animate-spin  " />}
+      {loading && (
+        <FaSpinner className="w-24 h-24 text-green-800  ml-96 my-44 animate-spin  " />
+      )}
       <div className="flex-col">
         {users &&
           users.map((user: User) => (
