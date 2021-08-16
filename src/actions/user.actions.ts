@@ -1,7 +1,7 @@
 import { bindActionCreators } from "redux";
 import { User } from "../models/User";
 import { store } from "../store";
-import { ME_UPDATE, USER_FETCH_COMPLETED, USER_FETCH_ONE, USER_QUERY, USER_QUERY_COMPLETED, USER_SELECTED_CHANGED } from "./actions.constants";
+import { ME_UPDATE, USER_FETCH_COMPLETED, USER_FETCH_ONE, USER_ALL, USER_ALL_COMPLETED, USER_SELECTED_CHANGED } from "./actions.constants";
 
 const meUpdate = (u: User) => ({
     type: ME_UPDATE,
@@ -16,10 +16,10 @@ const meUpdate = (u: User) => ({
 // );
 
 export const userChangedAction = () => ({
-    type: USER_QUERY,
+    type: USER_ALL,
   });
   export const userQueryCompleted = (users: User[]) => ({
-    type: USER_QUERY_COMPLETED,
+    type: USER_ALL_COMPLETED,
     payload: users,
   });
 

@@ -1,6 +1,6 @@
 import { Reducer } from "redux";
 import { User } from "../models/User";
-import { ME_FETCH, ME_LOGIN, USER_FETCH_COMPLETED, USER_FETCH_ONE, USER_QUERY, USER_QUERY_COMPLETED } from "../actions/actions.constants";
+import { ME_FETCH, ME_LOGIN, USER_FETCH_COMPLETED, USER_FETCH_ONE, USER_ALL, USER_ALL_COMPLETED } from "../actions/actions.constants";
 import { addMany, addOne, EntityState, getIds, initialEntityState,select } from "./entity.reducer";
 
 export interface UserState extends EntityState {
@@ -27,9 +27,9 @@ export const userReducer: Reducer<UserState> = (
         case ME_FETCH:
         case ME_LOGIN:
             return addOne(state,action.payload) as UserState;
-         case USER_QUERY:
+         case USER_ALL:
       return { ...state, loading: true };
-    case USER_QUERY_COMPLETED:
+    case USER_ALL_COMPLETED:
       const userIds = getIds(action.payload);
       const newState = addMany(state, action.payload) as UserState;
       return {

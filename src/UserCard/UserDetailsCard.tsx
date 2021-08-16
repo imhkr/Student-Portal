@@ -30,7 +30,7 @@ const UserDetailsCard: FC<Props> = ({
       <div className="mt-2">
         <img
           src={profile_image_url}
-          className="rounded-full ml-20 mt-2 my-4"
+          className="rounded-full ml-24  mt-2 my-6"
           alt=""
         />
         <div className="ml-4 my-4 ">

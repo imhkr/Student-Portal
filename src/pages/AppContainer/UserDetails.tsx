@@ -9,6 +9,7 @@ import {
 import { useAppSelector } from "../../store";
 import UserDetailsCard from "../../UserCard/UserDetailsCard";
 import { ImSpinner } from "react-icons/im";
+import ConfirmPop from "./ConfirmPop";
 interface Props {}
 
 const UserDetails: FC<Props> = (props) => {
@@ -20,7 +21,7 @@ const UserDetails: FC<Props> = (props) => {
   useEffect(() => {
     dispatch(userFetchOne(userId));
   }, [userId]);
-  if (user == undefined) {
+  if (loading && user == undefined) {
     return (
       <div className="text-green-400">
         <ImSpinner className="animate-spin w-8 h-8" />
@@ -29,19 +30,29 @@ const UserDetails: FC<Props> = (props) => {
   }
   return (
     <div>
-      <UserDetailsCard
-        id={user.id}
-        first_name={user.first_name}
-        last_name={user.last_name}
-        role={user.role}
-        profile_image_url={
-          user.profile_pic_url == undefined ? user.profile_pic_url : profile_url
-        }
-        hometown={user.hometown}
-        phone_nu={user.phone_number}
-        Last_Up={user.updated_at}
-        email={user.email}
-      />
+      {user != undefined ? (
+        <UserDetailsCard
+          id={user.id}
+          first_name={user.first_name}
+          last_name={user.last_name}
+          role={user.role}
+          profile_image_url={
+            user.profile_pic_url == undefined
+              ? user.profile_pic_url
+              : profile_url
+          }
+          hometown={user.hometown}
+          phone_nu={user.phone_number}
+          Last_Up={user.updated_at}
+          email={user.email}
+        />
+      ) : (
+        <ConfirmPop
+          title="Person Not Found"
+          okText="Dashboard"
+          cancelText="Retry"
+        />
+      )}
     </div>
   );
 };

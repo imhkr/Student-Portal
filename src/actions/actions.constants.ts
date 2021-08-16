@@ -9,8 +9,8 @@ export const GROUP_QUERY_CHANGED = "groups/query";
 export const GROUP_SELECTED = "groups/select";
 export const SIDEBAR_TOGGLE = "sidebar/toggle";
 
-export const USER_QUERY = "user/query";
-export const USER_QUERY_COMPLETED = "user/query_completed";
+export const USER_ALL = "user/all";
+export const USER_ALL_COMPLETED = "user/all_completed";
 export const USER_FETCH_ONE = "user/fetch_one";
 export const USER_FETCH_COMPLETED = "user/fetch_completed";
 export const USER_SELECTED_CHANGED="user/selected_changed";
