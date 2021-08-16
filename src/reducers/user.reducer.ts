@@ -3,7 +3,7 @@ import { User } from "../models/User";
 import { ME_FETCH, ME_LOGIN, USER_FETCH_COMPLETED, USER_FETCH_ONE, USER_ALL, USER_ALL_COMPLETED } from "../actions/actions.constants";
 import { addMany, addOne, EntityState, getIds, initialEntityState,select } from "./entity.reducer";
 
-export interface UserState extends EntityState {
+export interface UserState extends EntityState<User> {
      byId: { [id: number]: User
 }
  loading?: boolean;
@@ -35,7 +35,7 @@ export const userReducer: Reducer<UserState> = (
       return {
         ...newState,
         userIds: userIds,
-        loading: false,
+        loadingList: false,
       };
 
     case USER_FETCH_ONE:

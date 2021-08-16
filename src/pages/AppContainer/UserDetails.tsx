@@ -47,7 +47,7 @@ const UserDetails: FC<Props> = (props) => {
           />
         ) : (
           <div className="text-green-400">
-            {/* <ImSpinner className="animate-spin w-8 h-8" /> */}
+            <ImSpinner className="animate-spin w-8 h-8" />
             {error}
           </div>
         )}

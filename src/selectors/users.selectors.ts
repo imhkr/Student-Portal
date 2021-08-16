@@ -14,8 +14,8 @@ export const userLoadingStateSelector = createSelector(
 );
 export const loadingListUserSelector = createSelector(
   [userStateSelector],
-  (state) => {
-    return state.loadingList;
+  (userstate) => {
+    return userstate.loadingList;
   }
 );
 export const loadingByIdUserSelector = createSelector(

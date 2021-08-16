@@ -25,24 +25,26 @@ const UsersList: FC<Props> = (props) => {
   }, []);
   return (
     <div>
-      {loading && <FaSpinner className="w-5 h-5" />}
-      {users &&
-        users.map((user: User) => (
-          <Link to={"/users/" + user.id}>
-            <UserCard
-              id={user.id}
-              first_name={user.first_name}
-              last_name={user.last_name}
-              role={user.role}
-              index={user.id}
-              profile_image_url={
-                user.profile_pic_url == undefined
-                  ? user.profile_pic_url
-                  : profile_url
-              }
-            />
-          </Link>
-        ))}
+      {loading && <FaSpinner className="w-5 h-5 animate-spin  " />}
+      <div className="flex-col">
+        {users &&
+          users.map((user: User) => (
+            <Link to={"/users/" + user.id}>
+              <UserCard
+                id={user.id}
+                first_name={user.first_name}
+                last_name={user.last_name}
+                role={user.role}
+                index={user.id}
+                profile_image_url={
+                  user.profile_pic_url == undefined
+                    ? user.profile_pic_url
+                    : profile_url
+                }
+              />
+            </Link>
+          ))}
+      </div>
     </div>
   );
 };

@@ -26,7 +26,7 @@ const UserDetailsCard: FC<Props> = ({
   hometown,
 }) => {
   return (
-    <div className="w-96 mx-80 my-10 h-97 bg-userdetail  rounded-md">
+    <div className="w-96 pt-2 mx-80 my-10 h-97 bg-userdetail  rounded-md">
       <div className="mt-2">
         <img
           src={profile_image_url}

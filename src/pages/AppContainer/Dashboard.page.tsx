@@ -4,7 +4,7 @@ interface Props {}
 
 const Dashboard: FC<Props> = () => {
   return (
-    <div className="text-center mx-60 my-40 h-screen">
+    <div className="text-center mx-60 my-32 h-screen">
       <div>
         <div className="bg-white w-96 sm:ml-2 md:ml-24 h-20 ml-28 rounded-2xl shadow-lg-success-50">
           <Link to="/groups" className="cursor-pointer">
