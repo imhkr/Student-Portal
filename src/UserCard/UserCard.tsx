@@ -22,7 +22,7 @@ const UserCard: FC<Props> = ({
     themeClass = " bg-white border border-green-400 hover:bg-gray-100";
   else themeClass = " bg-gray-200 border-red-200  hover:bg-white";
   return (
-    <div className="w-72 h-60 ml-48 bg-gray-800 rounded-md my-2 justify-center text-white mx-auto uppercase flex flex-col">
+    <div className="w-72 h-60 ml-96 bg-gray-800 rounded-md my-2 justify-center text-white mx-auto uppercase flex flex-col">
       <div className="justify-center w-full mx-auto ">
         <div className="w-auto ">
           <img
