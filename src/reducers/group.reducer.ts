@@ -1,7 +1,7 @@
 import {  Reducer } from "redux";
 import { GROUP_FETCHED, GROUP_FETCH_COMPLETE, GROUP_FETCH_ONE, GROUP_QUERY_CHANGED, GROUP_SELECTED } from "../actions/actions.constants";
 import { Group } from "../models/Group";
-import { addMany, addOne, EntityState, getIds } from "./entity.reducer";
+import { addMany, addOne, EntityState, getIds, initialEntityState } from "./entity.reducer";
 
 interface GroupState extends EntityState<Group> {
    loading:boolean;
@@ -11,6 +11,7 @@ interface GroupState extends EntityState<Group> {
 }
 
 const initialState = {
+    ...initialEntityState,
     query: "",
     byId: {},
     queryMap: {},

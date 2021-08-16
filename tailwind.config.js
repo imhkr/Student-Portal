@@ -8,6 +8,8 @@ module.exports = {
       secondary: "#E6E8ED",
       sidebar: "#F1F2F3",
       cardcolor: "#FBFBF2",
+      usercard: "#54AAE1",
+      userdetail: "#001645",
     }),
     extend: {
       colors: {
@@ -24,6 +26,9 @@ module.exports = {
         secondary: {
           100: "#5d4fe0",
         },
+        usercard: {
+          100: "#35455c",
+        },
       },
       boxShadow: {
         "lg-primary": "0 10px 20px 2px #6f4beb",
@@ -31,6 +36,7 @@ module.exports = {
         "lg-success": "0 10px 30px 2px #32cc2d",
         "lg-success-50": "0 1px 20px 10px #165239",
         "lg-secondary": "0 10px 30px 2px #5d4fe0",
+        "lg-usercard": "0 10px 30px 2px #35455c",
       },
       keyframes: {
         "fade-in-down": {

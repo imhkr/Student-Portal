@@ -1,6 +1,7 @@
 import { Entity } from "./Entity";
 
-export interface User extends Entity {
+export interface User  {
+    id:number;
     __type?: string;
     first_name?: string;
     middle_name?: string;
@@ -35,7 +36,9 @@ export interface Person {
     occupations?: Occupation[];
     educations?: Education[];
 }
-
+export interface role{
+    role?:"Software Developer";
+}
 export interface Education {
     __type?: string;
     id?: number;

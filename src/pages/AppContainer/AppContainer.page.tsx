@@ -11,6 +11,7 @@ import OnSearchGroup from "././OnSearchGroup";
 import AccountSetting from "./AccountSetting";
 import GroupDetails from "./GroupDetails";
 import UsersList from "./UsersList";
+import UserDetails from "./UserDetails";
 
 interface Props {}
 
@@ -46,8 +47,11 @@ const AppContainer: FC<Props> = (props) => {
               <Route path="/groups2/:groupId">
                 <GroupDetails />
               </Route>
-              <Route path="/users">
+              <Route path="/users" exact>
                 <UsersList />
+              </Route>
+              <Route path="/users/:userId">
+                <UserDetails />
               </Route>
               <Route path="/account/profile">
                 <AccountSetting />

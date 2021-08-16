@@ -54,7 +54,8 @@ const App: FC<Props> = (props) => {
               "/groups2/:groupId",
               "/recording",
               "/users",
-              "account_settings",
+              "/users/:userId",
+              "/account_settings",
               "/batch/:batchNumber/lecture/:lectureNumber",
               "/account/profile",
             ]}
