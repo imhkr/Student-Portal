@@ -14,3 +14,4 @@ export const USER_ALL_COMPLETED = "user/all_completed";
 export const USER_FETCH_ONE = "user/fetch_one";
 export const USER_FETCH_COMPLETED = "user/fetch_completed";
 export const USER_SELECTED_CHANGED="user/selected_changed";
+export const SELECTED_USER_ERROR="user/selected_user_error";

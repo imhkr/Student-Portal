@@ -14,12 +14,16 @@ interface Props {
   description?: string;
   okText?: string;
   cancelText?: string;
+  Linked1?: string;
+  Linked2?: string;
 }
 const ConfirmPop: React.FC<Props> = ({
   title,
   description,
   okText,
   cancelText,
+  Linked1,
+  Linked2,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
 

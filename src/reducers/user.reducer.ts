@@ -41,7 +41,8 @@ export const userReducer: Reducer<UserState> = (
     case USER_FETCH_ONE:
     return select(state, action.payload) as UserState;
      case USER_FETCH_COMPLETED:
-      return { ...(addOne(state, action.payload,false) as UserState) };
+      const newStat=(addOne(state, action.payload,false) as UserState);
+      return {...newStat,loadingById:false};
         default:
             return state;
     }

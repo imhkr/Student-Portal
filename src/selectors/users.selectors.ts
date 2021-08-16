@@ -24,6 +24,10 @@ export const loadingByIdUserSelector = createSelector(
     return state.loadingById;
   }
 );
+export const UserErrorSelector = createSelector(
+	[userStateSelector],
+	(userState) => userState.error
+);
 export const userListSelector = createSelector(
   [userByIdSelector, userIdsSelector],
   (byId, userIds) => {

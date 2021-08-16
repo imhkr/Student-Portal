@@ -7,11 +7,13 @@ export interface EntityState<T extends Entity = Entity> {
     selectedId?: number;
   loadingById: boolean;
   loadingList: boolean;
+  error?:string;
 }
 export const initialEntityState = {
   byId: {},
   loadingById: false,
   loadingList: false,
+  error:"Person Not Found!",
 };
 
 
