@@ -23,9 +23,11 @@ const UserDetails: FC<Props> = (props) => {
   }, [userId]);
   if (loading && user == undefined) {
     return (
-      <div className="text-green-400">
-        <ImSpinner className="animate-spin w-8 h-8" />
-      </div>
+      <ConfirmPop
+        title="Person Not Found"
+        okText="Groups"
+        cancelText="Dashboard"
+      />
     );
   }
   return (
@@ -47,11 +49,9 @@ const UserDetails: FC<Props> = (props) => {
           email={user.email}
         />
       ) : (
-        <ConfirmPop
-          title="Person Not Found"
-          okText="Dashboard"
-          cancelText="Retry"
-        />
+        <div className="text-green-400">
+          <ImSpinner className="animate-spin w-8 h-8" />
+        </div>
       )}
     </div>
   );
