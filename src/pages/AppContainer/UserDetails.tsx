@@ -1,6 +1,6 @@
 import { FC, memo, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { userFetchOne } from "../../actions/user.actions";
 import {
   currentSelectedUserSelector,
@@ -11,6 +11,7 @@ import { useAppSelector } from "../../store";
 import UserDetailsCard from "../../UserCard/UserDetailsCard";
 import { ImSpinner } from "react-icons/im";
 import ConfirmPop from "./ConfirmPop";
+import { AiOutlineRollback } from "react-icons/ai";
 interface Props {}
 
 const UserDetails: FC<Props> = (props) => {
@@ -52,6 +53,9 @@ const UserDetails: FC<Props> = (props) => {
           </div>
         )}
       </div>
+      <Link to="/users">
+        <AiOutlineRollback className="w-10 h-10 -mt-60 ml-28" />
+      </Link>
     </div>
   );
 };
