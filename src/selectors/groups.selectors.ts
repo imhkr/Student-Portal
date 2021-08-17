@@ -43,3 +43,21 @@ export const GroupsResultSelector = createSelector(
         return groups;
     }
 );
+
+// export const groupCreatorSelector=createSelector(
+//     [groupStateSelector],
+//     (state)=>state.creatorId
+// );
+// export const groupmembersSelector=createSelector(
+//     [groupStateSelector],
+//     (state)=>state.participantsIds
+// );
+
+export const groupCreatorIdSelector = createSelector(
+  [groupStateSelector],
+  (group) => group.creatorId
+);
+export const groupMemberListIdIdsSelector = createSelector(
+  [groupStateSelector],
+  (group) => group.participantsIds
+);

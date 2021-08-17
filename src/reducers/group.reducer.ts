@@ -1,6 +1,8 @@
 import {  Reducer } from "redux";
 import { GROUP_FETCHED, GROUP_FETCH_COMPLETE, GROUP_FETCH_ONE, GROUP_QUERY_CHANGED, GROUP_SELECTED } from "../actions/actions.constants";
 import { Group } from "../models/Group";
+import { User } from "../models/User";
+
 import { addMany, addOne, EntityState, getIds, initialEntityState } from "./entity.reducer";
 
 interface GroupState extends EntityState<Group> {
@@ -8,6 +10,8 @@ interface GroupState extends EntityState<Group> {
     query: string;
     queryMap: { [query: string]: number[] };
     selectedId?: number;
+    creatorId:{[groupId:number]:number};
+    participantsIds:{[groupId:number]:number[]};
 }
 
 const initialState = {
@@ -16,6 +20,8 @@ const initialState = {
     byId: {},
     queryMap: {},
     loading:false,
+    creatorId:{},
+    participantsIds:{},
 };
 
 export const groupReducer: Reducer<GroupState> = (
@@ -46,8 +52,24 @@ export const groupReducer: Reducer<GroupState> = (
                 },
                loading:false,
             };
-            case GROUP_FETCH_COMPLETE:
-                return addOne(state,action.payload) as GroupState;
+            case GROUP_FETCH_COMPLETE:{
+                const group=action.payload as Group;
+                const newStateG=addOne(state,action.payload,false) as GroupState;
+                const participantIds=group.participants!.map((member:User)=>{
+                    return member.id!;
+                });
+                return {
+                    ...newStateG,
+                    creatorId:{
+                        ...newStateG.creatorId,
+                        [group.id!]:group.creator!.id,
+                    },
+                    participantsIds:{
+                        ...newStateG.participantsIds,
+                        [group.id!]:participantIds,
+                    },
+                };
+                }
         default:
             return state;
     }

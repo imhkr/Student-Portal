@@ -24,7 +24,7 @@ export const select = (state: EntityState, id: number) => ({
 });
 
 export const getIds = (entities: Entity[]) => {
-    return entities.map((e) => e.id);
+    return entities?.map((e) => e.id);
 };
 
 export const addOne = (state: EntityState, entity: Entity,loading?:boolean) => {

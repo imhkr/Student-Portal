@@ -1,7 +1,11 @@
 import { FC, memo, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useAppSelector } from "../../store";
-import { groupIdSelector } from "../../selectors/groups.selectors";
+import {
+  groupCreatorIdSelector,
+  groupIdSelector,
+  groupMemberListIdIdsSelector,
+} from "../../selectors/groups.selectors";
 import Button from "../../components/Button/Button";
 import ConfirmPop from "../AppContainer/ConfirmPop";
 import {
@@ -21,6 +25,8 @@ const GroupDetails: FC<Props> = (props) => {
   const groups = useAppSelector((state) => groupIdSelector(state));
   const currentGroupD = groups[Number(groupId)];
   const curentGroupId: number = +groupId;
+  const creatorOfGroupId = useAppSelector(groupCreatorIdSelector);
+  const idListOfMembers = useAppSelector(groupMemberListIdIdsSelector);
   const creator = currentGroupD?.creator;
   useEffect(() => {
     if (currentGroupD === undefined) {
@@ -87,13 +93,19 @@ const GroupDetails: FC<Props> = (props) => {
           className="w-28 h-28 rounded-xl  mx-20 absolute top-14 "
         />
         <div className="ml-60 mt-12 text-lg">
+          <h1>Creator Id:{" " + creatorOfGroupId[currentGroupD.id!]}</h1>
           <h1 className="text-green-700">
             Creator:{" " + creator?.first_name}
             {" " + creator?.last_name}
           </h1>
+          <h1>
+            Participants Id:
+            {idListOfMembers[currentGroupD.id!] === undefined ||
+            idListOfMembers[currentGroupD.id!].length === 0
+              ? " 0 Participants"
+              : idListOfMembers[currentGroupD.id!]}
+          </h1>
           <h1>Role: {" " + creator?.role}</h1>
-          <h1>Email: {" " + creator?.email}</h1>
-          <h1>Phone: {" " + creator?.phone_number}</h1>
         </div>
       </div>
       <Link to="/groups">
