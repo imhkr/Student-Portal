@@ -1,4 +1,5 @@
 import { FC, memo, ReactNode, useEffect } from "react";
+import { AiOutlineRollback } from "react-icons/ai";
 import { FaSpinner } from "react-icons/fa";
 import { FiLoader } from "react-icons/fi";
 import { useDispatch } from "react-redux";
@@ -25,28 +26,33 @@ const UsersList: FC<Props> = (props) => {
   }, []);
   return (
     <div>
-      {loading && (
-        <FaSpinner className="w-24 h-24 text-green-800  ml-96 my-44 animate-spin  " />
-      )}
-      <div className="flex-col">
-        {users &&
-          users.map((user: User) => (
-            <Link to={"/users/" + user.id}>
-              <UserCard
-                id={user.id}
-                first_name={user.first_name}
-                last_name={user.last_name}
-                role={user.role}
-                index={user.id}
-                profile_image_url={
-                  user.profile_pic_url == undefined
-                    ? user.profile_pic_url
-                    : profile_url
-                }
-              />
-            </Link>
-          ))}
+      <div>
+        {loading && (
+          <FaSpinner className="w-24 h-24 text-green-800  ml-96 my-44 animate-spin  " />
+        )}
+        <div className="flex-col">
+          {users &&
+            users.map((user: User) => (
+              <Link to={"/users/" + user.id}>
+                <UserCard
+                  id={user.id}
+                  first_name={user.first_name}
+                  last_name={user.last_name}
+                  role={user.role}
+                  index={user.id}
+                  profile_image_url={
+                    user.profile_pic_url == undefined
+                      ? user.profile_pic_url
+                      : profile_url
+                  }
+                />
+              </Link>
+            ))}
+        </div>
       </div>
+      <Link to="/dashboard">
+        <AiOutlineRollback className="w-10 h-10  absolute top-96 ml-28" />
+      </Link>
     </div>
   );
 };
