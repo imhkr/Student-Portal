@@ -26,8 +26,8 @@ const UserDetailsCard: FC<Props> = ({
   hometown,
 }) => {
   return (
-    <div className=" transform transition duration-500 hover:scale-110">
-      <div className="w-96 pt-2 mx-80 my-10 h-97 bg-userdetail  rounded-md">
+    <div>
+      <div className="w-96 pt-2 mx-80 my-10 h-97 bg-userdetail  rounded-md  transform transition duration-500 hover:scale-110">
         <div className="mt-2">
           <img
             src={profile_image_url}
