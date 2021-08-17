@@ -9,7 +9,8 @@ export interface Group extends Entity {
     updated_at: Date;
     chatCount: number;
     state: State | undefined;
-    creator?: User | null;
+    creator?: User;
+    participants?:User[];
     issues: any[];
     invitedMembers: User[];
 }
