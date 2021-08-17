@@ -1,4 +1,4 @@
-import { FC, memo, useState } from "react";
+import { FC, memo, useEffect, useState } from "react";
 import { HiSearch } from "react-icons/hi";
 import ListCard from "../../components/ListCard/ListCard";
 import { useDispatch } from "react-redux";
@@ -20,7 +20,9 @@ const OnSearchGroup: FC<Props> = (props) => {
   const [search, setSearch] = useState("");
   const groups = useAppSelector(GroupsResultSelector);
   const loading = useAppSelector(groupLoadingSelector);
-
+  useEffect(() => {
+    dispatch(groupQueryChange(""));
+  }, []);
   return (
     <div>
       <div className="ml-96 h-screen z-50">
