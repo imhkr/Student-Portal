@@ -26,31 +26,33 @@ const UserDetailsCard: FC<Props> = ({
   hometown,
 }) => {
   return (
-    <div className="w-96 pt-2 mx-80 my-10 h-97 bg-userdetail  rounded-md">
-      <div className="mt-2">
-        <img
-          src={profile_image_url}
-          className="rounded-full ml-24  mt-2 my-6"
-          alt=""
-        />
-        <div className="ml-4 my-4 ">
-          <h1 className="text-white">Id:{" " + id}</h1>
-          <h1 className="text-white">Role:{" " + role}</h1>
+    <div className=" transform transition duration-500 hover:scale-110">
+      <div className="w-96 pt-2 mx-80 my-10 h-97 bg-userdetail  rounded-md">
+        <div className="mt-2">
+          <img
+            src={profile_image_url}
+            className="rounded-full ml-24  mt-2 my-6"
+            alt=""
+          />
+          <div className="ml-4 my-4 ">
+            <h1 className="text-white">Id:{" " + id}</h1>
+            <h1 className="text-white">Role:{" " + role}</h1>
 
-          <h1 className="text-white">
-            Name: {" " + first_name}
-            {" " + last_name}
-          </h1>
-          <h1 className="text-white">Email:{" " + email}</h1>
-          <h1 className="text-white">Contact:{" " + phone_nu}</h1>
+            <h1 className="text-white">
+              Name: {" " + first_name}
+              {" " + last_name}
+            </h1>
+            <h1 className="text-white">Email:{" " + email}</h1>
+            <h1 className="text-white">Contact:{" " + phone_nu}</h1>
 
-          <h1 className="text-white">Last Updated On:{" " + Last_Up}</h1>
+            <h1 className="text-white">Last Updated On:{" " + Last_Up}</h1>
+          </div>
         </div>
-      </div>
-      <div className="text-white space-x-10 justify-evenly flex">
-        <FiFacebook />
-        <FiTwitter />
-        <FiLinkedin />
+        <div className="text-white space-x-10 justify-evenly flex">
+          <FiFacebook />
+          <FiTwitter />
+          <FiLinkedin />
+        </div>
       </div>
     </div>
   );
