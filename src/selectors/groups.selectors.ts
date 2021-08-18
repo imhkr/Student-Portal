@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
 import { groupStateSelector } from "./app.selectors";
-
+import {userByIdSelector} from "./users.selectors";
 export const groupQuerySelector = createSelector([groupStateSelector], (state) => {
     return state.query;
 }
@@ -44,20 +44,12 @@ export const GroupsResultSelector = createSelector(
     }
 );
 
-// export const groupCreatorSelector=createSelector(
-//     [groupStateSelector],
-//     (state)=>state.creatorId
-// );
-// export const groupmembersSelector=createSelector(
-//     [groupStateSelector],
-//     (state)=>state.participantsIds
-// );
 
 export const groupCreatorIdSelector = createSelector(
   [groupStateSelector],
-  (group) => group.creatorId
+  (groupState) => groupState.creatorId
 );
 export const groupMemberListIdIdsSelector = createSelector(
   [groupStateSelector],
-  (group) => group.participantsIds
+  (groupState) => groupState.participantsIds
 );
