@@ -17,7 +17,7 @@ interface Props {}
 
 const AppContainer: FC<Props> = (props) => {
   return (
-    <div className="bg-secondary md:h-full lg:h-full">
+    <div className="bg-secondary md:h-full lg:h-full sm:h-full">
       <div>
         <Navbar />
         <Header Heading="Dashboard" />

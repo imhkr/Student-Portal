@@ -27,7 +27,7 @@ const OnChangeGroup: FC<Props> = (props) => {
   }, []);
 
   return (
-    <div className="ml-96 h-screen z-50">
+    <div className="ml-96 h-full z-50">
       <div className="relative mt-24">
         <span className="w-80 mb-10 ml-2 h-10 bg-gray-800  border border-gray-800  text-sm rounded-md flex outline-gray-800">
           <input

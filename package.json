@@ -17,6 +17,7 @@
     "antd": "^4.16.7",
     "axios": "^0.21.1",
     "formik": "^2.2.9",
+    "normalizer": "^1.2.7",
     "react": "^17.0.2",
     "react-content-loader": "^6.0.3",
     "react-datepicker": "^4.1.1",

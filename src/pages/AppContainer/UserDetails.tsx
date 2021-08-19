@@ -54,7 +54,7 @@ const UserDetails: FC<Props> = (props) => {
         )}
       </div>
       <Link to="/users">
-        <AiOutlineRollback className="w-10 h-10 -mt-60 ml-28" />
+        <AiOutlineRollback className="w-10 h-10 -mt-60 ml-28 text-gray-800" />
       </Link>
     </div>
   );

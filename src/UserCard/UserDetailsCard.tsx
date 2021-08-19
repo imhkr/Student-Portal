@@ -48,7 +48,7 @@ const UserDetailsCard: FC<Props> = ({
             <h1 className="text-white">Last Updated On:{" " + Last_Up}</h1>
           </div>
         </div>
-        <div className="text-white space-x-10 justify-evenly flex">
+        <div className="text-white space-x-10 justify-evenly flex cursor-pointer">
           <FiFacebook />
           <FiTwitter />
           <FiLinkedin />
