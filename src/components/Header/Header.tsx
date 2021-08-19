@@ -42,7 +42,7 @@ const Header: FC<Props> = ({ Heading, Linked1 }) => {
             </h1>
           </div>
         </div>
-        <div className="flex z-40">
+        <div className="flex z-50">
           <MenuDrop title="Settings">
             <Features feature="Settings" />
             <Features feature="Mail" />
